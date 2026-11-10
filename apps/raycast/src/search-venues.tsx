@@ -86,7 +86,7 @@ export default function SearchVenues() {
   const [type, setType] = useState("all")
   const [showingPreview, setShowingPreview] = useState(false)
   const results = catalog.search(query, { limit: 100, ...(type === "all" ? {} : { type: type as Venue["type"] }) })
-  return <List navigationTitle="Venue Rank" filtering={false} isShowingDetail={showingPreview} searchText={query} onSearchTextChange={setQuery} searchBarPlaceholder="Search venues…" searchBarAccessory={
+  return <List filtering={false} isShowingDetail={showingPreview} searchText={query} onSearchTextChange={setQuery} searchBarPlaceholder="Search venues…" searchBarAccessory={
     <List.Dropdown tooltip="Venue type" value={type} onChange={setType}>
       <List.Dropdown.Item title="All Venues" value="all" />
       <List.Dropdown.Item title="Conferences" value="conference" />

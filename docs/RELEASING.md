@@ -65,3 +65,9 @@ The Raycast publishing guide is https://developers.raycast.com/basics/publish-an
 You should update the public source snapshots, rebuild the dataset, review grade and identity changes, and run the checks. You should then publish a new core package, redeploy the website, and regenerate the standalone Raycast export and submit an extension update with the same snapshot. Each interface shows its data version, so publication delays remain visible.
 
 No runtime data service or background metadata download is part of the first release.
+
+## Store review updates stay synchronized.
+
+The Store README remains user-facing. Contributor instructions belong in this repository. The exporter bundles the shared catalog, preserves project and third-party license text in NOTICE.md, and omits a duplicate per-extension LICENSE file. Its formatter uses printWidth 120 and double quotes. The command root leaves its navigation title to Raycast. Native Store captures belong in apps/raycast/metadata and are copied into the standalone submission. README media stays in its separate media directory.
+
+The website build renders the initial catalog directly into HTML and emits canonical metadata, structured data, and sitemap.xml. The production check validates these artifacts before deployment. The domain root robots.txt currently allows crawling. Search Console can receive https://wgeng.site/venue-rank/sitemap.xml after the owner verifies the site. Search engine inclusion and ranking are not guaranteed by deployment.

@@ -95,3 +95,15 @@ Wei chose to use the existing personal domain instead of creating a VenueRank or
 ## The website was published at 2026-11-10T16:00:30+01:00.
 
 GitHub Pages successfully published https://wgeng.site/venue-rank/ from commit 230c5dc. The deployment workflow is https://github.com/ViGeng/venue-rank/actions/runs/42839101983. The hosted page loaded over HTTPS and a misspelled sigcom search returned SIGCOMM with CCF A and ICORE A*. Venue details displayed the original source links and dataset version 2026.11.10. The live screenshot is docs/screenshots/published-site.jpg. The personal homepage configuration was not changed.
+
+## SEO and Store review fixes were prepared at 2026-11-10T16:23:35+01:00.
+
+The website build now emits its initial catalog as HTML, descriptive metadata, a canonical URL, structured WebSite and WebApplication data, a sitemap, and a sharing icon. Production-artifact checks validate these outputs, and the existing 28 tests passed. A production browser check verified typo search and venue details. Valid Store findings were applied to the shared source and standalone exporter: the README is user-facing, the root navigation title is left to Raycast, Prettier uses width 120, and NOTICE.md retains attribution without a duplicate LICENSE file. Native Store captures and the requested pre-submission privacy review are still in progress.
+
+## The native Store capture was reviewed at 2026-11-10T16:30:05+01:00.
+
+The user saved a Capture Window screenshot into apps/raycast/metadata. It is a 2000 by 1250 PNG showing public venue data and the action panel, with no visible personal paths, account information, or unrelated application content. The exporter now includes this native metadata capture in the submission. The user replaced the temporary capture shortcut with a different shortcut, so the user's current setting was preserved.
+
+## Store screenshot validation passed at 2026-11-10T16:32:23+01:00.
+
+The native metadata image passed the official repository validator. Its dimensions and padding meet the current Store checks. The shared export includes the capture without image modification, and the reviewed README links to the published website. The submission is ready for the final independent checks and push.

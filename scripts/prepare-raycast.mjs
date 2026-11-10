@@ -1,5 +1,5 @@
 import { execFileSync } from "node:child_process"
-import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises"
+import { cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import { fileURLToPath } from "node:url"
 
@@ -9,7 +9,9 @@ const extension = join(root, "apps/raycast")
 await rm(destination, { recursive: true, force: true })
 await mkdir(join(destination, "src"), { recursive: true })
 for (const name of ["assets", "README.md"]) await cp(join(extension, name), join(destination, name), { recursive: true })
-for (const name of ["LICENSE", "NOTICE.md"]) await cp(join(root, name), join(destination, name))
+const notice = await readFile(join(root, "NOTICE.md"), "utf8")
+const license = await readFile(join(root, "LICENSE"), "utf8")
+await writeFile(join(destination, "NOTICE.md"), notice.replace("in LICENSE", "in the raycast/extensions repository root LICENSE") + "\n## Venue Rank source license\n\n" + license)
 await cp(join(root, "packages/core/src"), join(destination, "src/catalog"), { recursive: true })
 const command = await readFile(join(extension, "src/search-venues.tsx"), "utf8")
 await writeFile(join(destination, "src/search-venues.tsx"), command.replaceAll('from "venue-rank"', 'from "./catalog"'))
@@ -25,10 +27,12 @@ await writeFile(join(destination, "package.json"), JSON.stringify(manifest, null
 const config = { $schema: "https://json.schemastore.org/tsconfig", include: ["src/**/*", "raycast-env.d.ts"], compilerOptions: { lib: ["ES2023"], module: "commonjs", target: "ES2023", strict: true, isolatedModules: true, esModuleInterop: true, skipLibCheck: true, forceConsistentCasingInFileNames: true, jsx: "react-jsx", resolveJsonModule: true } }
 await writeFile(join(destination, "tsconfig.json"), JSON.stringify(config, null, 2) + "\n")
 await writeFile(join(destination, "eslint.config.mjs"), 'import raycastConfig from "@raycast/eslint-config";\n\nexport default [...raycastConfig];\n')
-await writeFile(join(destination, ".prettierrc"), "{}\n")
+await writeFile(join(destination, ".prettierrc"), JSON.stringify({ printWidth: 120, singleQuote: false }, null, 2) + "\n")
 await writeFile(join(destination, "CHANGELOG.md"), "# Venue Rank Changelog\n\n## [Initial Release] - {PR_MERGE_DATE}\n\nThe extension searches computer science conferences and journals offline, shows CCF 2026 and ICORE2026 assessments with source links, and supports venue filtering, detail previews, and reference copying.\n")
 await mkdir(join(destination, "media"), { recursive: true })
 for (const name of ["list", "detail", "preview"]) await cp(join(root, `docs/screenshots/raycast-${name}.jpg`), join(destination, `media/${name}.jpg`))
+await mkdir(join(destination, "metadata"), { recursive: true })
+for (const name of await readdir(join(extension, "metadata"))) await cp(join(extension, "metadata", name), join(destination, "metadata", name.replace(/^venue-rank-raycast-/, "venue-rank-")))
 if (process.argv.includes("--local")) {
   execFileSync("npm", ["install", "--no-audit", "--no-fund"], { cwd: destination, stdio: "inherit" })
   execFileSync("npm", ["run", "fix-lint"], { cwd: destination, stdio: "inherit" })

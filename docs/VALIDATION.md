@@ -80,3 +80,9 @@ The generated export in release/raycast/venue-rank matches all submitted files, 
 ## The public GitHub Pages website was verified at 2026-11-10T16:00:30+01:00.
 
 The successful deployment is https://github.com/ViGeng/venue-rank/actions/runs/42839101983, serving https://wgeng.site/venue-rank/ from commit 230c5dc. Its clean Linux workflow passed dataset reproduction, lint, TypeScript, all 28 tests, the Vite build, and isolated package verification. The live browser rendered the approved layout, returned SIGCOMM first for sigcom with CCF A and ICORE A*, and opened venue details with source links and dataset 2026.11.10. The saved live screenshot is docs/screenshots/published-site.jpg. The repository retains the manual Pages deployment workflow.
+
+## SEO and Store review validation passed at 2026-11-10T16:32:23+01:00.
+
+The production build emits the initial 24 catalog rows directly in HTML, canonical metadata for https://wgeng.site/venue-rank/, structured WebSite and WebApplication metadata, sharing metadata, and sitemap.xml. Production-output checks confirmed the initial content, unique element IDs, parseable structured data, a single canonical sitemap URL, and valid asset paths. The existing 28 tests and complete project check passed, and a production browser session verified typo search and venue detail navigation.
+
+The official Store screenshot validator passed the user-generated 2000 by 1250 Capture Window PNG, including padding and symmetry checks. Visual privacy review found only public venue information and no personal paths, account details, or unrelated application content. Text changes were reviewed for private paths and credential-like assignments without exposing any matched values. The root robots.txt allows crawling. Search Console verification and Google indexing have not been claimed.

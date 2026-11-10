@@ -95,3 +95,9 @@ The website uses a minimal search-first layout with the approved unframed vr let
 The website supports acronym and full-name search, typo tolerance, venue-type filters, source-specific grade filters, shareable URLs, venue details, reference copying, and links to the original sources. Every assessment retains its edition. Ambiguous acronyms remain multiple candidates.
 
 CSRankings, Tsinghua, and HKUST assessments are not bundled in this edition. The core supports additional lists, including inclusion lists. Missing data is never represented as a lower grade. The NOTICE.md file preserves attribution and third-party terms.
+
+## Search engines can read the initial page.
+
+The production build includes the first 24 catalog results directly in its HTML, so crawlers do not need JavaScript to discover the page content. The interactive interface keeps the same search and detail behavior. The canonical URL consolidates search and filter query variants, and the build emits structured metadata, social sharing metadata, and [sitemap.xml](https://wgeng.site/venue-rank/sitemap.xml).
+
+The root domain robots.txt allows crawling. The owner can submit the sitemap through Google Search Console after verifying the property. These changes support crawling and indexing, but they do not establish that Google has indexed the site or guarantee a search position.
