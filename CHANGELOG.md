@@ -83,3 +83,7 @@ The requested release will publish the shared project to ViGeng/venue-rank and d
 ## The clean CI package check was repaired at 2026-11-10T15:43:57+01:00.
 
 The first Pages workflow passed data validation, lint, TypeScript, all 28 tests, and the website build. The isolated package installation then failed because strict offline mode required registry metadata absent from the new runner cache. The consumer install now prefers cached dependencies while allowing missing npm metadata to be downloaded. Runtime catalog checks still make no network requests. The clean-cache package check will run before redeployment.
+
+## The website domain preference was updated at 2026-11-10T15:47:22+01:00.
+
+Wei requested an independent github.io hostname instead of the personal domain. The in-progress personal-account Pages deployment was cancelled, and the newly created project Pages configuration and repository homepage link were removed. The personal homepage configuration was not changed. GitHub inherits the user-site domain for project sites, so a separate account or organization is required for the requested branded github.io hostname. The organization name is awaiting confirmation.
