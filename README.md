@@ -56,7 +56,7 @@ The Raycast interface is exported into a standalone release directory before Sto
 npm run check
 ```
 
-This command checks snapshot reproducibility, lint, TypeScript, library behavior, the production website, and an isolated npm package consumer. Package verification installs the generated archive into a temporary project and checks ESM, CommonJS, TypeScript declarations, and the raw JSON export. It uses the local npm cache and does not query ranking services.
+This command checks snapshot reproducibility, lint, TypeScript, library behavior, the production website, and an isolated npm package consumer. Package verification installs the generated archive into a temporary project and checks ESM, CommonJS, TypeScript declarations, and the raw JSON export. It prefers the local npm cache and can download missing package metadata or dependencies from npm. It does not query ranking services.
 
 ```sh
 npm run build:raycast

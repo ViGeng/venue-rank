@@ -18,7 +18,7 @@ assert(!paths.some(path => path.startsWith("src/") || path.includes(".env")), "T
 const consumer = await mkdtemp(join(tmpdir(), "venue-rank-consumer-"))
 try {
   await writeFile(join(consumer, "package.json"), JSON.stringify({ private: true, type: "module" }))
-  execFileSync("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--offline", archive], { cwd: consumer, stdio: "pipe" })
+  execFileSync("npm", ["install", "--ignore-scripts", "--no-audit", "--no-fund", "--prefer-offline", archive], { cwd: consumer, stdio: "pipe" })
   const test = `
     import assert from 'node:assert/strict'
     import { searchVenues, getAssessments, createCatalog, bundledDataset } from 'venue-rank'

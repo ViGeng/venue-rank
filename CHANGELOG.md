@@ -79,3 +79,7 @@ The formal submission is https://github.com/raycast/extensions/pull/33381. Commi
 ## The GitHub Pages release was prepared at 2026-11-10T15:41:10+01:00.
 
 The requested release will publish the shared project to ViGeng/venue-rank and deploy apps/web/dist through the existing manual GitHub Pages workflow. The artifact upload action was aligned with the current GitHub Pages documentation. Full local checks will run before the initial public commit.
+
+## The clean CI package check was repaired at 2026-11-10T15:43:57+01:00.
+
+The first Pages workflow passed data validation, lint, TypeScript, all 28 tests, and the website build. The isolated package installation then failed because strict offline mode required registry metadata absent from the new runner cache. The consumer install now prefers cached dependencies while allowing missing npm metadata to be downloaded. Runtime catalog checks still make no network requests. The clean-cache package check will run before redeployment.
