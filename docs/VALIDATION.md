@@ -76,3 +76,7 @@ The actual native screenshots are docs/screenshots/raycast-list.jpg, raycast-det
 ## The independent Store submission was verified at 2026-11-10T15:36:36+01:00.
 
 The generated export in release/raycast/venue-rank matches all submitted files, including package-lock.json. Its dependencies use public npm registry URLs and contain no local paths or workspace links. Official Raycast author and icon validation, ESLint, Prettier, the explicit dist build, and all 28 existing catalog tests against the standalone source passed. The native distribution build displayed the expected SIGCOMM assessments and supported details, preview, and source information. The submission is https://github.com/raycast/extensions/pull/33381. Official CI was still running at creation time.
+
+## The public GitHub Pages website was verified at 2026-11-10T16:00:30+01:00.
+
+The successful deployment is https://github.com/ViGeng/venue-rank/actions/runs/42839101983, serving https://wgeng.site/venue-rank/ from commit 230c5dc. Its clean Linux workflow passed dataset reproduction, lint, TypeScript, all 28 tests, the Vite build, and isolated package verification. The live browser rendered the approved layout, returned SIGCOMM first for sigcom with CCF A and ICORE A*, and opened venue details with source links and dataset 2026.11.10. The saved live screenshot is docs/screenshots/published-site.jpg. The repository retains the manual Pages deployment workflow.

@@ -1,10 +1,12 @@
 # Venue Rank
 
+You can search venues at **[wgeng.site/venue-rank](https://wgeng.site/venue-rank/)**.
+
 Venue Rank searches computer science conferences and journals and returns independent, source-specific assessments. It includes a reusable npm library, a static website for GitHub Pages, and a Raycast extension. Searches run locally, and metadata ships with the code.
 
 The first local implementation targets version 0.1.0. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
 
-Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. The website is being deployed at https://wgeng.site/venue-rank/ through the existing personal-account GitHub Pages domain. The detailed results are in docs/VALIDATION.md.
+Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. The website is published at [wgeng.site/venue-rank](https://wgeng.site/venue-rank/) through the existing personal-account GitHub Pages domain. The detailed results are in docs/VALIDATION.md.
 
 ## You can run the website locally.
 

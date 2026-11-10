@@ -91,3 +91,7 @@ Wei requested an independent github.io hostname instead of the personal domain. 
 ## Personal-domain website hosting was selected at 2026-11-10T15:55:38+01:00.
 
 Wei chose to use the existing personal domain instead of creating a VenueRank organization. The project Pages configuration will be restored for ViGeng/venue-rank, with the target https://wgeng.site/venue-rank/. The existing personal homepage configuration remains unchanged. The latest complete GitHub project checks passed before this documentation-only update.
+
+## The website was published at 2026-11-10T16:00:30+01:00.
+
+GitHub Pages successfully published https://wgeng.site/venue-rank/ from commit 230c5dc. The deployment workflow is https://github.com/ViGeng/venue-rank/actions/runs/42839101983. The hosted page loaded over HTTPS and a misspelled sigcom search returned SIGCOMM with CCF A and ICORE A*. Venue details displayed the original source links and dataset version 2026.11.10. The live screenshot is docs/screenshots/published-site.jpg. The personal homepage configuration was not changed.
