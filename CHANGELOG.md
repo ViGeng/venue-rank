@@ -107,3 +107,7 @@ The user saved a Capture Window screenshot into apps/raycast/metadata. It is a 2
 ## Store screenshot validation passed at 2026-11-10T16:32:23+01:00.
 
 The native metadata image passed the official repository validator. Its dimensions and padding meet the current Store checks. The shared export includes the capture without image modification, and the reviewed README links to the published website. The submission is ready for the final independent checks and push.
+
+## SEO publication and Store review were verified at 2026-11-10T16:41:25+01:00.
+
+The SEO build deployed successfully in GitHub Actions run 42845394010. The live HTTPS response includes 24 catalog rows, the descriptive title, canonical URL, valid structured data, sitemap.xml, and the sharing icon. Raycast PR 33381 was updated at commit 9eb7ec6aad with the native metadata screenshot and all five review fixes. The screenshot validator, extension checks, and Greptile re-review passed, and the five original review threads are resolved. The native PNG contains only image dimensions in EXIF and a generic Display color profile. The final privacy review found no personal content or credential-like text in the changed submission.
