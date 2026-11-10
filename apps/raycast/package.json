@@ -1,0 +1,48 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "venue-rank-raycast",
+  "title": "Venue Rank",
+  "description": "Search computer science conferences and journals across versioned ranking lists, offline.",
+  "icon": "icon.png",
+  "author": "ViGeng",
+  "license": "MIT",
+  "categories": [
+    "Developer Tools",
+    "Data"
+  ],
+  "platforms": [
+    "macOS"
+  ],
+  "commands": [
+    {
+      "name": "search-venues",
+      "title": "Search Venues",
+      "description": "Look up venue grades and their sources.",
+      "mode": "view"
+    }
+  ],
+  "scripts": {
+    "dev": "node scripts/ensure-typescript.mjs && ray develop",
+    "build": "node scripts/ensure-typescript.mjs && ray build -e dist",
+    "lint": "ray lint",
+    "publish": "ray publish"
+  },
+  "dependencies": {
+    "@raycast/api": "2.11.1",
+    "venue-rank": "0.1.0",
+    "react": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "typescript": "5.9.3"
+  },
+  "keywords": [
+    "conference",
+    "journal",
+    "CCF",
+    "CORE",
+    "ICORE",
+    "ranking",
+    "research"
+  ]
+}

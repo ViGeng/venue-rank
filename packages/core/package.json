@@ -1,0 +1,64 @@
+{
+  "name": "venue-rank",
+  "version": "0.1.0",
+  "description": "Offline computer science venue search and source-specific assessments, with bundled versioned metadata.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./engine": {
+      "import": {
+        "types": "./dist/engine.d.ts",
+        "default": "./dist/engine.js"
+      },
+      "require": {
+        "types": "./dist/engine.d.cts",
+        "default": "./dist/engine.cjs"
+      }
+    },
+    "./data": "./dist/snapshot.json",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "ccf",
+    "core",
+    "icore",
+    "conference",
+    "journal",
+    "ranking",
+    "fuzzy-search"
+  ],
+  "license": "MIT",
+  "author": "Wei Geng <wei.geng@tum.de>",
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "build": "tsup && node ../../scripts/copy-package-files.mjs",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "fuse.js": "7.5.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

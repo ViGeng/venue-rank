@@ -1,0 +1,37 @@
+{
+  "name": "venue-rank-workspace",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "apps/web",
+    "apps/raycast"
+  ],
+  "engines": {
+    "node": ">=22.14"
+  },
+  "scripts": {
+    "dev": "npm run build -w venue-rank && npm run dev -w @venue-rank/web",
+    "build": "npm run build -w venue-rank && npm run build -w @venue-rank/web",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "typecheck": "npm run build -w venue-rank && tsc -p packages/core/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit && tsc -p apps/raycast/tsconfig.json --noEmit",
+    "check:data": "python3 scripts/import-data.py --check",
+    "data:build": "python3 scripts/import-data.py",
+    "check": "npm run check:data && npm run lint && npm run typecheck && npm test && npm run build -w @venue-rank/web && npm run test:package",
+    "test:package": "node scripts/test-package.mjs",
+    "prepare:raycast": "node scripts/prepare-raycast.mjs",
+    "build:raycast": "npm run build -w venue-rank && npm run build -w venue-rank-raycast"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsup": "8.5.1",
+    "vite": "8.3.7",
+    "vitest": "4.1.12",
+    "eslint": "10.14.0",
+    "typescript-eslint": "8.72.2",
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.6.6"
+  }
+}

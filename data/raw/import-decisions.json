@@ -1,0 +1,52 @@
+[
+  {
+    "upstreamRow": 13,
+    "action": "skip",
+    "reason": "The journal also has its correct /journals/pc entry. /conf/parco identifies a different conference."
+  },
+  {
+    "upstreamRow": 52,
+    "action": "alias",
+    "reason": "conf:codesisss is an explicitly reviewed alias of conf:codes."
+  },
+  {
+    "upstreamRow": 119,
+    "action": "repair",
+    "reason": "The upstream TIOT row uses spaces instead of tabs before its DBLP fields."
+  },
+  {
+    "upstreamRow": 215,
+    "action": "separate",
+    "reason": "HotSec is a workshop and must not inherit the USENIX Security main conference grade."
+  },
+  {
+    "upstreamRow": 217,
+    "action": "skip",
+    "reason": "The upstream Inscrypt alias points at the distinct ICISC series. This ambiguous CCF association is omitted. The official ICORE ICISC record remains independent."
+  },
+  {
+    "upstreamRow": 228,
+    "action": "alias",
+    "reason": "journals:iee is an explicitly reviewed alias of journals:iet-sen."
+  },
+  {
+    "upstreamRow": 363,
+    "action": "alias",
+    "reason": "conf:pkdd is an explicitly reviewed alias of conf:ecml."
+  },
+  {
+    "upstreamRow": 592,
+    "action": "alias",
+    "reason": "conf:ifaamas is an explicitly reviewed alias of conf:atal."
+  },
+  {
+    "upstreamRow": 702,
+    "action": "separate",
+    "reason": "ISMB is a conference published in Bioinformatics. Its assessment does not belong to the Bioinformatics journal."
+  },
+  {
+    "upstreamRow": 703,
+    "action": "separate",
+    "reason": "ISMB is a conference published in Bioinformatics. Its assessment does not belong to the Bioinformatics journal."
+  }
+]
