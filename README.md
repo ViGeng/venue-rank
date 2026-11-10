@@ -8,6 +8,12 @@ The first local implementation targets version 0.1.0. It currently bundles 1,347
 
 Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. The website is published at [wgeng.site/venue-rank](https://wgeng.site/venue-rank/) through the existing personal-account GitHub Pages domain. The detailed results are in docs/VALIDATION.md.
 
+## Roadmap
+
+- [ ] extend to more rankings/lists
+      - [ ] Tsinghua
+      - [ ] HKUST
+      
 ## You can run the website locally.
 
 You need Node.js 22.18 or a compatible newer release, npm, and Python 3.10 or newer.
