@@ -87,3 +87,7 @@ The first Pages workflow passed data validation, lint, TypeScript, all 28 tests,
 ## The website domain preference was updated at 2026-11-10T15:47:22+01:00.
 
 Wei requested an independent github.io hostname instead of the personal domain. The in-progress personal-account Pages deployment was cancelled, and the newly created project Pages configuration and repository homepage link were removed. The personal homepage configuration was not changed. GitHub inherits the user-site domain for project sites, so a separate account or organization is required for the requested branded github.io hostname. The organization name is awaiting confirmation.
+
+## Personal-domain website hosting was selected at 2026-11-10T15:55:38+01:00.
+
+Wei chose to use the existing personal domain instead of creating a VenueRank organization. The project Pages configuration will be restored for ViGeng/venue-rank, with the target https://wgeng.site/venue-rank/. The existing personal homepage configuration remains unchanged. The latest complete GitHub project checks passed before this documentation-only update.

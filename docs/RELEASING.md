@@ -27,7 +27,7 @@ The package's prepack script builds the JavaScript and declarations and copies l
 
 ## The website is deployed to GitHub Pages.
 
-You must confirm the GitHub repository and push the reviewed source. In the repository settings, Pages should use GitHub Actions. The Deploy to GitHub Pages workflow can then be triggered manually. It runs checks, builds the site, and uploads only apps/web/dist. Its relative asset base works under a project subpath.
+The development repository is ViGeng/venue-rank. Its GitHub Pages site inherits the existing wgeng.site domain and is served at https://wgeng.site/venue-rank/. In the repository settings, Pages uses GitHub Actions. The Deploy to GitHub Pages workflow can then be triggered manually. It runs checks, builds the site, and uploads only apps/web/dist. Its relative asset base works under a project subpath.
 
 Website visitors receive the built JavaScript and metadata from Pages. They do not install dependencies from npm when entering a search. A new npm publication does not change an existing deployment until that deployment is rebuilt with the intended version.
 

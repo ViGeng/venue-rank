@@ -4,7 +4,7 @@ Venue Rank searches computer science conferences and journals and returns indepe
 
 The first local implementation targets version 0.1.0. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
 
-Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. Website publication is awaiting a dedicated github.io hosting owner so the site does not inherit the personal domain. The detailed results are in docs/VALIDATION.md.
+Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. The website is being deployed at https://wgeng.site/venue-rank/ through the existing personal-account GitHub Pages domain. The detailed results are in docs/VALIDATION.md.
 
 ## You can run the website locally.
 
@@ -82,7 +82,7 @@ The CCF snapshot is pinned to an upstream commit. A future edition should receiv
 
 ## Publication has separate destinations.
 
-The core library is prepared for npm as venue-rank@0.1.0. The static website is ready for GitHub Pages. Publication will use a dedicated github.io hosting owner, while the public development repository is ViGeng/venue-rank. The deployment workflow is manually triggered. The Raycast extension was submitted in [raycast/extensions PR #33381](https://github.com/raycast/extensions/pull/33381). No public repository, npm publication, Pages deployment, or Store submission is implied by a successful local build.
+The core library is prepared for npm as venue-rank@0.1.0. The static website is ready for GitHub Pages. The website uses https://wgeng.site/venue-rank/, inherited from the existing personal Pages domain. The public development repository is ViGeng/venue-rank. The deployment workflow is manually triggered. The Raycast extension was submitted in [raycast/extensions PR #33381](https://github.com/raycast/extensions/pull/33381). No public repository, npm publication, Pages deployment, or Store submission is implied by a successful local build.
 
 The release guide in docs/RELEASING.md describes the sequence and the required publication identities. The metadata guide in docs/DATA.md explains source semantics and how to add another list. The implementation plan is in docs/PLAN.md.
 
