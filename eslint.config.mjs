@@ -2,7 +2,7 @@ import js from "@eslint/js"
 import tseslint from "typescript-eslint"
 
 export default tseslint.config(
-  { ignores: ["**/dist/**", "**/raycast-env.d.ts", "**/node_modules/**", "release/**", "packages/core/src/data/snapshot.json"] },
+  { ignores: ["**/dist/**", "**/node_modules/**", "release/**", "packages/core/src/data/snapshot.json"] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   { files: ["**/*.ts", "**/*.tsx"], rules: { "no-undef": "off" } },

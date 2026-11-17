@@ -63,6 +63,6 @@ const customCatalog = createCatalog({
 console.log(customCatalog.getAssessments("conf:sigcomm"))
 ```
 
-The search engine, website assessment columns and filters, and Raycast details render configured sources generically. Adding a bundled source does not require changing their assessment rendering logic.
+The search engine and website assessment columns and filters render configured sources generically. Adding a bundled source does not require changing their assessment rendering logic. Independent consumers receive new bundled sources by updating their package dependency.
 
 Before redistributing another dataset, you should establish the exact publisher, edition, and applicable reuse terms. CSRankings is deliberately not imported because its published FAQ describes restrictive redistribution terms. Tsinghua and HKUST require a specific source and edition before import.

@@ -119,3 +119,19 @@ The synchronization carries the UI changes from f4ae75c, including venue-type ic
 ## The independent Raycast synchronization passed validation at 2026-11-17T15:52:51+01:00.
 
 The generated extension passed npm ci with the existing PR lockfile, official Raycast lint, the dist build, and the existing 28 catalog tests. All three author-provided native captures passed the official image validator and a visual, text, and metadata privacy review. The submission matches the generated export, and the ranking data and dependency lockfile are unchanged. The latest UI remains ready for Wei's manual interaction checks before Store acceptance.
+
+## Raycast ownership was separated at 2026-11-17T16:28:09+01:00.
+
+The plan is to maintain Raycast only in the extensions repository and let it consume the published core package. The tracked Raycast workspace, exporter, and build commands have been removed from this repository. The extension preserves the latest Store-side UI. The README and release documentation now describe the library and website boundary. Historical branding assets and validation records are preserved. Validation is pending, and npm publication remains necessary for public dependency installation.
+
+## The repository separation passed local checks at 2026-11-17T16:31:38+01:00.
+
+The complete project check passed dataset reproduction, lint, TypeScript, all 28 tests, the production website build, and isolated npm package installation. The separate extension passed official lint, TypeScript, and the distribution build using the tested local package. Generated Raycast directories were archived outside the repository, and AGENTS.md records the ownership boundary. npm publication was attempted with authorization but failed, and npm whoami returned 401. Public package installation remains pending npm authentication and publication.
+
+## The core package was published and verified at 2026-11-17T16:39:41+01:00.
+
+The authorized publication of venue-rank@0.1.0 succeeded after npm login and browser confirmation. An anonymous registry request verified public availability and matched the tested archive integrity. The separate extension installed its dependencies from the public registry with a fresh npm cache and passed official lint, TypeScript, and the distribution build. The README and release guide now describe the published package.
+
+## The release privacy workflow was corrected at 2026-11-17T16:43:41+01:00.
+
+The plan is to review sensitive and private information before every public release without requiring another user reminder. The published 0.1.0 archive received a retrospective privacy review, and no findings were reported within the documented checks. The README, release guide, and validation record describe the scope and timing. A global release privacy skill was installed, and the Raycast skill now references it. No new package was published during this correction.

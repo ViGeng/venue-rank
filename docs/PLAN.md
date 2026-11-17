@@ -1,19 +1,19 @@
 # Venue Rank implementation plan
 
-This project provides a reusable TypeScript library, a static website, and a Raycast extension for looking up computer science venue assessments. Metadata ships with the library, and searches run locally.
+This repository provides a reusable TypeScript library and a static website for looking up computer science venue assessments. The Raycast extension is maintained in the separate extensions repository and consumes the published library. Metadata ships with the library, and searches run locally.
 
 ## First release
 
 1. The library will expose typed venue search and assessment APIs, use Fuse.js for fuzzy matching, and accept additional datasets without changing the search implementation.
 2. The bundled dataset will preserve source identities, source versions where established, provenance, and coverage. The initial release will prioritize CCF and CORE/ICORE. Sources that cannot be verified or redistributed will remain explicitly unavailable.
 3. The website will run as a static Vite application suitable for GitHub Pages and will show venue identity, assessments, source links, and dataset versions.
-4. The Raycast extension will use the same library and dataset. Its distributable project must install and build independently from the monorepo.
+4. Independent consumers will depend on the published library and dataset without copying their implementation into this repository.
 5. Automated checks will cover search ambiguity, assessment semantics, dataset integrity, TypeScript, linting, static builds, and installing the packed npm artifact in a separate consumer.
-6. Documentation will describe data extension, data refresh, local development, npm packaging, GitHub Pages deployment, and Raycast submission. The changelog will record implementation and verified limitations.
+6. Documentation will describe data extension, data refresh, local development, npm packaging, and GitHub Pages deployment. The changelog will record implementation and verified limitations.
 
 ## Publication
 
-The initial package version will be 0.1.0. Public npm publication, repository creation or pushing, GitHub Pages deployment, and Raycast Store submission will follow local validation and confirmation of the publication identities and destinations.
+The initial package version will be 0.1.0. Public npm publication, repository creation or pushing, and GitHub Pages deployment will follow local validation and confirmation of the publication identities and destinations.
 
 ## Metadata policy
 

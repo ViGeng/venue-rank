@@ -5,8 +5,7 @@
   "type": "module",
   "workspaces": [
     "packages/core",
-    "apps/web",
-    "apps/raycast"
+    "apps/web"
   ],
   "engines": {
     "node": ">=22.14"
@@ -16,13 +15,11 @@
     "build": "npm run build -w venue-rank && npm run build -w @venue-rank/web",
     "test": "vitest run",
     "lint": "eslint .",
-    "typecheck": "npm run build -w venue-rank && tsc -p packages/core/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit && tsc -p apps/raycast/tsconfig.json --noEmit",
+    "typecheck": "npm run build -w venue-rank && tsc -p packages/core/tsconfig.json --noEmit && tsc -p apps/web/tsconfig.json --noEmit",
     "check:data": "python3 scripts/import-data.py --check",
     "data:build": "python3 scripts/import-data.py",
     "check": "npm run check:data && npm run lint && npm run typecheck && npm test && npm run build -w @venue-rank/web && npm run test:package",
-    "test:package": "node scripts/test-package.mjs",
-    "prepare:raycast": "node scripts/prepare-raycast.mjs",
-    "build:raycast": "npm run build -w venue-rank && npm run build -w venue-rank-raycast"
+    "test:package": "node scripts/test-package.mjs"
   },
   "devDependencies": {
     "typescript": "5.9.3",

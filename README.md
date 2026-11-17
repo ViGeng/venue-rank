@@ -2,11 +2,11 @@
 
 You can search venues at **[wgeng.site/venue-rank](https://wgeng.site/venue-rank/)**.
 
-Venue Rank searches computer science conferences and journals and returns independent, source-specific assessments. It includes a reusable npm library, a static website for GitHub Pages, and a Raycast extension. Searches run locally, and metadata ships with the code.
+Venue Rank searches computer science conferences and journals and returns independent, source-specific assessments. This repository contains the reusable npm library and a static website for GitHub Pages. The Raycast extension is maintained independently in [raycast/extensions](https://github.com/raycast/extensions/pull/33381), under `extensions/venue-rank`, and consumes the `venue-rank` package. Searches run locally, and metadata ships with the code.
 
-The first local implementation targets version 0.1.0. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
+The published library version is 0.1.0. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
 
-Local verification passed all 28 tests, lint, TypeScript, static builds, isolated package installation, and both Raycast build modes. The browser search and mobile layout were also checked. Native Raycast search, detail navigation, the source-information view, and preview switching were verified locally. The Raycast Store submission is open. The GitHub repository is public. The website is published at [wgeng.site/venue-rank](https://wgeng.site/venue-rank/) through the existing personal-account GitHub Pages domain. The detailed results are in docs/VALIDATION.md.
+The verification history, including the retrospective privacy review of the published npm archive, is in docs/VALIDATION.md. The website is published at [wgeng.site/venue-rank](https://wgeng.site/venue-rank/). The library is published as [venue-rank@0.1.0](https://www.npmjs.com/package/venue-rank/v/0.1.0), and independent consumers can install it from npm.
 
 ## Roadmap
 
@@ -31,7 +31,7 @@ npm run build
 
 ## You can use the library without a website.
 
-The following example works after the npm package has been published. During development, the website and extension resolve the local workspace package.
+Install the published library with `npm install venue-rank`. During development, the website resolves the local workspace package.
 
 ```ts
 import { searchVenues, getAssessments } from "venue-rank"
@@ -46,17 +46,14 @@ if (first) {
 
 The package exports ESM, CommonJS, TypeScript declarations, and a JSON dataset. The venue-rank/engine entry point provides the search engine without importing the bundled dataset. You can supply your own VenueDataset to createCatalog.
 
-## The project keeps a single development repository.
+## This repository owns the library, data, and website.
 
 - The packages/core directory owns the shared library and bundled snapshot.
 - The apps/web directory owns the static browser interface.
-- The apps/raycast directory owns the Raycast interface and its Store manifest.
 - The data/raw directory preserves public source snapshots and import decisions.
 - The scripts directory owns deterministic metadata generation and distribution checks.
 
-The Raycast interface uses a full-width results list with venue-type icons, source-specific colored grade badges, and displayed-result counts. Enter opens structured details, Command-D toggles preview, and source notes are kept behind Data & Sources.
-
-The Raycast interface is exported into a standalone release directory before Store submission. The export bundles the shared catalog source and metadata, so Store CI does not require an npm publication or sibling checkout. The standalone directory is release/raycast/venue-rank.
+Raycast changes belong only in the extensions repository at `extensions/venue-rank`. This repository has no Raycast workspace, copied extension source, or export workflow. Shared search or dataset changes belong in the core package and reach consumers through package updates.
 
 ## You can verify the implementation.
 
@@ -65,13 +62,6 @@ npm run check
 ```
 
 This command checks snapshot reproducibility, lint, TypeScript, library behavior, the production website, and an isolated npm package consumer. Package verification installs the generated archive into a temporary project and checks ESM, CommonJS, TypeScript declarations, and the raw JSON export. It prefers the local npm cache and can download missing package metadata or dependencies from npm. It does not query ranking services.
-
-```sh
-npm run build:raycast
-npm run prepare:raycast -- --local
-```
-
-The Raycast distribution check requires npm dependencies and can download them. Interactive Raycast verification requires the Raycast application on macOS. The official Raycast author validator confirmed the handle ViGeng.
 
 ## You can maintain the metadata.
 
@@ -90,7 +80,7 @@ The CCF snapshot is pinned to an upstream commit. A future edition should receiv
 
 ## Publication has separate destinations.
 
-The core library is prepared for npm as venue-rank@0.1.0. The static website is ready for GitHub Pages. The website uses https://wgeng.site/venue-rank/, inherited from the existing personal Pages domain. The public development repository is ViGeng/venue-rank. The deployment workflow is manually triggered. The Raycast extension was submitted in [raycast/extensions PR #33381](https://github.com/raycast/extensions/pull/33381). No public repository, npm publication, Pages deployment, or Store submission is implied by a successful local build.
+The core library is published on npm as venue-rank@0.1.0. Independent consumers install the published package. The static website is ready for GitHub Pages. The website uses https://wgeng.site/venue-rank/, inherited from the existing personal Pages domain. The public development repository is ViGeng/venue-rank. The deployment workflow is manually triggered. The Raycast extension was submitted in [raycast/extensions PR #33381](https://github.com/raycast/extensions/pull/33381). No public repository, npm publication, Pages deployment, or Store submission is implied by a successful local build.
 
 The release guide in docs/RELEASING.md describes the sequence and the required publication identities. The metadata guide in docs/DATA.md explains source semantics and how to add another list. The implementation plan is in docs/PLAN.md.
 
@@ -107,5 +97,3 @@ CSRankings, Tsinghua, and HKUST assessments are not bundled in this edition. The
 The production build includes the first 24 catalog results directly in its HTML, so crawlers do not need JavaScript to discover the page content. The interactive interface keeps the same search and detail behavior. The canonical URL consolidates search and filter query variants, and the build emits structured metadata, social sharing metadata, and [sitemap.xml](https://wgeng.site/venue-rank/sitemap.xml).
 
 The root domain robots.txt allows crawling. The owner can submit the sitemap through Google Search Console after verifying the property. These changes support crawling and indexing, but they do not establish that Google has indexed the site or guarantee a search position.
-
-The latest Raycast UI update is exported with three author-provided native captures. README images are stored separately in apps/raycast/media, while Store images remain in apps/raycast/metadata. The initial Store changelog includes the current interface behavior.

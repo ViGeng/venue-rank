@@ -1,73 +1,38 @@
-# Releases distribute the same code and data to different destinations.
+# Releases distribute the library and website.
 
-The local repository is the development source of truth. The npm registry stores versioned core packages. GitHub Pages serves the built website. The raycast/extensions repository stores the extension's submitted source, and the Raycast Store distributes its built extension.
+This repository owns the core library, versioned dataset, and website. The npm registry stores versioned core packages, and GitHub Pages serves the built website. The Raycast extension is maintained separately in `raycast/extensions`, under `extensions/venue-rank`, and depends on the published `venue-rank` package. All extension development and Store submissions take place there.
+
+## Every public release requires a privacy review.
+
+Review the exact final artifact before publication, including generated files and embedded source-map content. Check the file inventory before reading contents, and exclude credential or authentication files without opening them. Check for private information and unintended configuration while preserving deliberate public attribution. Pattern scanning supports contextual review and does not prove that an artifact contains no sensitive information. A successful build, lint run, or dependency audit does not replace this review. Rebuild and repeat the relevant review after any release-content correction.
 
 ## Local verification comes first.
 
 ```sh
 npm ci
 npm run check
-npm run build:raycast
-npm run prepare:raycast -- --local
 ```
 
-The generated npm archive is saved in release. The isolated package test uses that archive in a separate temporary project. The local Raycast preparation command bundles the catalog source and snapshot into an independent directory, installs public registry dependencies, and runs official lint and the distribution build. Its lockfile is suitable for Store submission.
+The generated npm archive is saved in release. The isolated package test installs that archive in a temporary project and verifies ESM, CommonJS, TypeScript declarations, and the JSON export.
 
 ## The core package is published to npm.
 
-You must confirm the intended npm owner, package name, and licensing before the first public publication. The proposed name venue-rank was available at the initial unauthenticated registry check on 2026-11-10, but availability must be checked again at publication time. A scoped name can be substituted consistently if necessary.
-
-After local verification and authentication through the user's normal npm workflow, the package can be published from packages/core.
+The first package, [venue-rank@0.1.0](https://www.npmjs.com/package/venue-rank/v/0.1.0), was published on 2026-11-17. Its code uses the MIT license. An anonymous registry request and installation with a fresh npm cache verified public availability and the archive integrity. Future publication requires the owner's authorization and authentication through the normal npm workflow.
 
 ```sh
 npm publish --workspace venue-rank --access public
 ```
 
-The package's prepack script builds the JavaScript and declarations and copies license, attribution, and data files. Each published version should be treated as immutable. Data changes require a new package version even when the API stays the same.
+The package's prepack script builds the JavaScript and declarations and copies license, attribution, and data files. Each published version is immutable. Data changes require a new package version even when the API stays the same. Independent consumers must use a version that is available in the public registry.
 
 ## The website is deployed to GitHub Pages.
 
-The development repository is ViGeng/venue-rank. Its GitHub Pages site inherits the existing wgeng.site domain and is served at https://wgeng.site/venue-rank/. In the repository settings, Pages uses GitHub Actions. The Deploy to GitHub Pages workflow can then be triggered manually. It runs checks, builds the site, and uploads only apps/web/dist. Its relative asset base works under a project subpath.
+The development repository is ViGeng/venue-rank. Its GitHub Pages site inherits the existing wgeng.site domain and is served at https://wgeng.site/venue-rank/. Pages uses GitHub Actions. The Deploy to GitHub Pages workflow can be triggered manually. It runs checks, builds the site, and uploads only apps/web/dist. Its relative asset base works under a project subpath.
 
-Website visitors receive the built JavaScript and metadata from Pages. They do not install dependencies from npm when entering a search. A new npm publication does not change an existing deployment until that deployment is rebuilt with the intended version.
+Website visitors receive the built JavaScript and metadata from Pages. The website uses the local workspace library during its build. Publishing an npm package does not change an existing deployment until the website is rebuilt and deployed.
 
-## The extension is submitted to Raycast.
+## Metadata changes require coordinated releases.
 
-The verified Raycast author is ViGeng, and the Store slug is venue-rank. The extension code and icon are MIT licensed. NOTICE.md preserves third-party data attribution.
+Update the public source snapshots, rebuild the dataset, review grade and identity changes, and run the checks. Publish a new core package and redeploy the website. Independent consumers can then update their package dependencies in their own repositories. No source-copying step is needed. Each interface shows its data version, so publication delays remain visible.
 
-The core package does not need to be published to npm before submitting the extension.
-
-```sh
-npm run prepare:raycast -- --local
-cd release/raycast/venue-rank
-npm run lint
-npm run build
-```
-
-The export copies the shared catalog source and metadata into src/catalog, uses public registry dependencies, and generates a normal package-lock.json. Verify the distribution build in Raycast before submitting. You can use the publishing command below or open a normal fork PR to raycast/extensions main.
-
-```sh
-npm run publish
-```
-
-The Raycast CLI creates a Pull Request to raycast/extensions. Review and merge are controlled by Raycast. Merging publishes the extension to the Store. This command is distinct from npm publish, which publishes the core package.
-
-Official extension contributions must be pulled back into the development source before subsequent publication, using the official pull-contributions command where appropriate.
-
-```sh
-npx @raycast/api@latest pull-contributions
-```
-
-The Raycast publishing guide is https://developers.raycast.com/basics/publish-an-extension and the Store preparation guide is https://developers.raycast.com/basics/prepare-an-extension-for-store.
-
-## A metadata update follows a short release sequence.
-
-You should update the public source snapshots, rebuild the dataset, review grade and identity changes, and run the checks. You should then publish a new core package, redeploy the website, and regenerate the standalone Raycast export and submit an extension update with the same snapshot. Each interface shows its data version, so publication delays remain visible.
-
-No runtime data service or background metadata download is part of the first release.
-
-## Store review updates stay synchronized.
-
-The Store README remains user-facing. Contributor instructions belong in this repository. The exporter bundles the shared catalog, preserves project and third-party license text in NOTICE.md, and omits a duplicate per-extension LICENSE file. Its formatter uses printWidth 120 and double quotes. The command root leaves its navigation title to Raycast. Native Store captures belong in apps/raycast/metadata and are copied into the standalone submission. README media stays in its separate media directory.
-
-The website build renders the initial catalog directly into HTML and emits canonical metadata, structured data, and sitemap.xml. The production check validates these artifacts before deployment. The domain root robots.txt currently allows crawling. Search Console can receive https://wgeng.site/venue-rank/sitemap.xml after the owner verifies the site. Search engine inclusion and ranking are not guaranteed by deployment.
+The website build renders the initial catalog directly into HTML and emits canonical metadata, structured data, and sitemap.xml. The production check validates these artifacts before deployment. Search Console can receive https://wgeng.site/venue-rank/sitemap.xml after the owner verifies the site. Search engine inclusion and ranking are not guaranteed by deployment.

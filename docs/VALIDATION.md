@@ -94,3 +94,19 @@ The successful website run is https://github.com/ViGeng/venue-rank/actions/runs/
 ## The updated Raycast submission was validated at 2026-11-17T15:52:51+01:00.
 
 The interface changes from f4ae75c were exported with venue-type icons, explicit-grade colors, result counts, action groups, and dataset metadata. The original ranking data and PR dependency lockfile were retained. Independent npm ci, official lint, the distribution build, and all 28 existing tests passed. Three current native captures passed the official Store image validator. README media is separate from metadata, and all submitted files match the formatted export. The changed text and screenshot metadata contain no private home paths, credential assignments, account details, or location data. The agent did not perform native Raycast interaction tests for this synchronization.
+
+## The repository separation was checked at 2026-11-17T16:31:38+01:00.
+
+Raycast source and the exporter were removed from this repository. The shared package, website, and data importer remain here. The full project check passed snapshot reproduction, ESLint, TypeScript, all 28 tests, the website production build, and isolated ESM, CommonJS, TypeScript, and JSON package consumers. The extension source in the separate extensions checkout imports the package and has no copied catalog implementation or snapshot. Official extension lint, TypeScript, and the distribution build passed with the local package archive.
+
+The core package remains unpublished. The authorized npm publish request failed, and npm whoami returned 401 Unauthorized. Public registry installation requires restored authentication and successful publication. The previous Raycast sections above describe historical workspace and export checks, whose paths no longer apply to current development. Native Raycast interaction was not tested during this separation.
+
+## Public npm consumption was verified at 2026-11-17T16:39:41+01:00.
+
+The public registry serves venue-rank@0.1.0 without authentication. Its integrity matches the locally tested archive and the independent extension lockfile. The extension completed npm ci against the public registry with a fresh cache, then passed official Raycast lint, the explicit distribution build, and TypeScript. Publication and public installation are complete. These results supersede the authentication and publication limits recorded in the previous section. Native Raycast interaction was not tested in this publication step.
+
+## The published npm archive received a retrospective privacy review at 2026-11-17T16:43:41+01:00.
+
+This review happened after publication and does not establish that a prepublication privacy check occurred. The archive matches the public registry integrity and the intended 17-file inventory. The review checked all 17 text files, four source maps, and eight embedded source contents for credential patterns, private filesystem paths, private network addresses, authenticated URLs, and unexpected email addresses. It also checked the expected package documentation and declared author identity. No findings were reported by these checks. The author email is deliberate public attribution.
+
+The review covers the npm archive, which contains no screenshots. Unpublished Git changes and screenshots outside that archive were not covered. Pattern checks cannot prove the absence of every form of private information. The release guide now requires review of the final artifact before future publication.
