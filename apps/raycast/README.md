@@ -20,15 +20,15 @@ The list header shows how many venues are displayed, with up to 100 results per 
 
 The venue list shows colored assessment badges and the number of displayed results.
 
-![The venue list.](media/venue-rank-1.png)
+![The venue list.](metadata/venue-rank-raycast-1.png)
 
 The action panel provides venue details, reference copying, preview switching, and source links.
 
-![Search results and venue actions.](media/venue-rank-2.png)
+![Search results and venue actions.](metadata/venue-rank-raycast-2.png)
 
 The detail view shows each source edition and the dataset version.
 
-![The venue detail view.](media/venue-rank-3.png)
+![The venue detail view.](metadata/venue-rank-raycast-3.png)
 
 ## Assessment coverage
 
