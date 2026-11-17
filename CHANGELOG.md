@@ -111,3 +111,11 @@ The native metadata image passed the official repository validator. Its dimensio
 ## SEO publication and Store review were verified at 2026-11-10T16:41:25+01:00.
 
 The SEO build deployed successfully in GitHub Actions run 42845394010. The live HTTPS response includes 24 catalog rows, the descriptive title, canonical URL, valid structured data, sitemap.xml, and the sharing icon. Raycast PR 33381 was updated at commit 9eb7ec6aad with the native metadata screenshot and all five review fixes. The screenshot validator, extension checks, and Greptile re-review passed, and the five original review threads are resolved. The native PNG contains only image dimensions in EXIF and a generic Display color profile. The final privacy review found no personal content or credential-like text in the changed submission.
+
+## The latest Raycast interface was prepared for PR synchronization at 2026-11-17T15:48:02+01:00.
+
+The synchronization carries the UI changes from f4ae75c, including venue-type icons, explicit-grade colors, result counts, action groups, and dataset metadata. Three current native screenshots were reviewed and are exported as Store metadata and separate README media. The README no longer links into metadata or describes the new captures as outdated. Automated validation and submission synchronization will run before the existing PR is updated.
+
+## The independent Raycast synchronization passed validation at 2026-11-17T15:52:51+01:00.
+
+The generated extension passed npm ci with the existing PR lockfile, official Raycast lint, the dist build, and the existing 28 catalog tests. All three author-provided native captures passed the official image validator and a visual, text, and metadata privacy review. The submission matches the generated export, and the ranking data and dependency lockfile are unchanged. The latest UI remains ready for Wei's manual interaction checks before Store acceptance.

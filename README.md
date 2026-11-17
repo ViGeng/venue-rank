@@ -54,7 +54,7 @@ The package exports ESM, CommonJS, TypeScript declarations, and a JSON dataset. 
 - The data/raw directory preserves public source snapshots and import decisions.
 - The scripts directory owns deterministic metadata generation and distribution checks.
 
-The Raycast interface uses a full-width results list with compact monochrome assessment text. Enter opens structured details, Command-D toggles preview, and source notes are kept behind Data & Sources.
+The Raycast interface uses a full-width results list with venue-type icons, source-specific colored grade badges, and displayed-result counts. Enter opens structured details, Command-D toggles preview, and source notes are kept behind Data & Sources.
 
 The Raycast interface is exported into a standalone release directory before Store submission. The export bundles the shared catalog source and metadata, so Store CI does not require an npm publication or sibling checkout. The standalone directory is release/raycast/venue-rank.
 
@@ -107,3 +107,5 @@ CSRankings, Tsinghua, and HKUST assessments are not bundled in this edition. The
 The production build includes the first 24 catalog results directly in its HTML, so crawlers do not need JavaScript to discover the page content. The interactive interface keeps the same search and detail behavior. The canonical URL consolidates search and filter query variants, and the build emits structured metadata, social sharing metadata, and [sitemap.xml](https://wgeng.site/venue-rank/sitemap.xml).
 
 The root domain robots.txt allows crawling. The owner can submit the sitemap through Google Search Console after verifying the property. These changes support crawling and indexing, but they do not establish that Google has indexed the site or guarantee a search position.
+
+The latest Raycast UI update is exported with three author-provided native captures. README images are stored separately in apps/raycast/media, while Store images remain in apps/raycast/metadata. The initial Store changelog includes the current interface behavior.
