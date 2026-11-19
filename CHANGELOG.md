@@ -135,3 +135,9 @@ The authorized publication of venue-rank@0.1.0 succeeded after npm login and bro
 ## The release privacy workflow was corrected at 2026-11-17T16:43:41+01:00.
 
 The plan is to review sensitive and private information before every public release without requiring another user reminder. The published 0.1.0 archive received a retrospective privacy review, and no findings were reported within the documented checks. The README, release guide, and validation record describe the scope and timing. A global release privacy skill was installed, and the Raycast skill now references it. No new package was published during this correction.
+
+## Package source metadata was added at 2026-11-19T16:34:33+01:00.
+
+The core package manifest now declares the public Git repository and packages/core monorepo directory. The package README links to its source, tests, dataset, and project repository. The package version remains 0.1.0, and the published npm artifact has not been replaced. The generated archive will be checked before this source update is completed.
+
+Lint, the core build, and isolated ESM, CommonJS, JSON, and TypeScript package-consumer checks passed. The generated archive contains the repository URL, packages/core directory, and README source links. The outgoing source diff passed the privacy review. No npm publication was performed.

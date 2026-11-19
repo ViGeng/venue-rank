@@ -2,6 +2,8 @@
 
 Venue Rank provides local fuzzy search for computer science conferences and journals, with versioned CCF and CORE / ICORE metadata. It has no UI dependency and makes no runtime network requests.
 
+The package source, tests, and bundled dataset are available in [packages/core in the public Venue Rank repository](https://github.com/ViGeng/venue-rank/tree/main/packages/core). The [project repository](https://github.com/ViGeng/venue-rank) also contains the website and data import records.
+
 ```ts
 import { searchVenues, getVenue, getAssessments } from "venue-rank"
 

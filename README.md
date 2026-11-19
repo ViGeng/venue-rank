@@ -44,6 +44,8 @@ if (first) {
 }
 ```
 
+The core package manifest identifies its public Git repository and the packages/core monorepo directory. The package README also links directly to its source. These additions will appear in the next npm release.
+
 The package exports ESM, CommonJS, TypeScript declarations, and a JSON dataset. The venue-rank/engine entry point provides the search engine without importing the bundled dataset. You can supply your own VenueDataset to createCatalog.
 
 ## This repository owns the library, data, and website.
