@@ -153,3 +153,11 @@ The complete project check passed dataset reproduction, lint, TypeScript, all 28
 ## npm accepted the 0.1.1 release at 2026-11-19T16:47:08+01:00.
 
 The final 17-file npm archive, four source maps and their embedded source content, the six-file website output, and the outgoing source diff passed the prepublication privacy review. The website image contains only the public logo. npm accepted the exact reviewed archive after browser publication authorization. Anonymous registry availability and downstream updates are still pending while npm processes the package.
+
+## Public 0.1.1 installation passed at 2026-11-19T16:48:58+01:00.
+
+Anonymous registry metadata and archive verification passed, and a fresh-cache consumer installed venue-rank@0.1.1 successfully. The published archive matches the prepublication review. Only package metadata and README differ from 0.1.0. The website dependency is pinned to 0.1.1, and its Pages deployment is running. The separate Raycast dependency update is in progress.
+
+## The 0.1.1 downstreams were updated at 2026-11-19T16:51:40+01:00.
+
+The Pages workflow completed successfully, and all six public website files match the reviewed build. The separate Raycast extension was upgraded to the same published package, passed clean installation, official lint, and distribution build, and was pushed to the existing PR in commit 59e02ed891. The PR description provides package and immutable source links. Native Raycast testing remains with the author.

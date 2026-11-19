@@ -19,11 +19,13 @@ The generated npm archive is saved in release. The isolated package test install
 
 The first package, [venue-rank@0.1.0](https://www.npmjs.com/package/venue-rank/v/0.1.0), was published on 2026-11-17. Its code uses the MIT license. An anonymous registry request and installation with a fresh npm cache verified public availability and the archive integrity. Future publication requires the owner's authorization and authentication through the normal npm workflow.
 
+After building and reviewing the generated archive, publish that exact file without rebuilding it. For the current version, the command is:
+
 ```sh
-npm publish --workspace venue-rank --access public
+npm publish release/venue-rank-0.1.1.tgz --access public --ignore-scripts
 ```
 
-The package's prepack script builds the JavaScript and declarations and copies license, attribution, and data files. Each published version is immutable. Data changes require a new package version even when the API stays the same. Independent consumers must use a version that is available in the public registry.
+Version 0.1.1 adds public repository metadata and explicit package source links. Its published archive was verified against the reviewed local artifact. The normal package prepack script builds the JavaScript and declarations and copies license, attribution, and data files. Publishing the reviewed archive avoids rerunning that script after review. Each published version is immutable. Data changes require a new package version even when the API stays the same. Independent consumers must use a version that is available in the public registry.
 
 ## The website is deployed to GitHub Pages.
 
