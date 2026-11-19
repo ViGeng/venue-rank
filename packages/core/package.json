@@ -1,6 +1,6 @@
 {
   "name": "venue-rank",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Offline computer science venue search and source-specific assessments, with bundled versioned metadata.",
   "type": "module",
   "main": "./dist/index.cjs",

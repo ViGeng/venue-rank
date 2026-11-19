@@ -4,7 +4,7 @@ You can search venues at **[wgeng.site/venue-rank](https://wgeng.site/venue-rank
 
 Venue Rank searches computer science conferences and journals and returns independent, source-specific assessments. This repository contains the reusable npm library and a static website for GitHub Pages. The Raycast extension is maintained independently in [raycast/extensions](https://github.com/raycast/extensions/pull/33381), under `extensions/venue-rank`, and consumes the `venue-rank` package. Searches run locally, and metadata ships with the code.
 
-The published library version is 0.1.0. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
+The source library version is 0.1.1. npm has accepted the metadata-only release, and public registry verification is pending. It currently bundles 1,347 venue identities and 1,666 assessments in dataset 2026.11.10. The CCF transcription contributes 679 assessments, and the official ICORE2026 portal contributes 987 records. Both source definitions conservatively report partial identity coverage, so a missing association is displayed as not verified. Metadata provenance and import decisions are retained in data/raw.
 
 The verification history, including the retrospective privacy review of the published npm archive, is in docs/VALIDATION.md. The website is published at [wgeng.site/venue-rank](https://wgeng.site/venue-rank/). The library is published as [venue-rank@0.1.0](https://www.npmjs.com/package/venue-rank/v/0.1.0), and independent consumers can install it from npm.
 
@@ -44,7 +44,7 @@ if (first) {
 }
 ```
 
-The core package manifest identifies its public Git repository and the packages/core monorepo directory. The package README also links directly to its source. These additions will appear in the next npm release.
+The core package manifest identifies its public Git repository and the packages/core monorepo directory. The package README also links directly to its source. Version 0.1.1 includes these additions.
 
 The package exports ESM, CommonJS, TypeScript declarations, and a JSON dataset. The venue-rank/engine entry point provides the search engine without importing the bundled dataset. You can supply your own VenueDataset to createCatalog.
 

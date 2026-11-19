@@ -141,3 +141,15 @@ The plan is to review sensitive and private information before every public rele
 The core package manifest now declares the public Git repository and packages/core monorepo directory. The package README links to its source, tests, dataset, and project repository. The package version remains 0.1.0, and the published npm artifact has not been replaced. The generated archive will be checked before this source update is completed.
 
 Lint, the core build, and isolated ESM, CommonJS, JSON, and TypeScript package-consumer checks passed. The generated archive contains the repository URL, packages/core directory, and README source links. The outgoing source diff passed the privacy review. No npm publication was performed.
+
+## The 0.1.1 release was prepared at 2026-11-19T16:39:54+01:00.
+
+The plan is to publish the source repository metadata and README links as venue-rank@0.1.1, verify the exact public archive, rebuild the website against 0.1.1, and update the Raycast PR dependency and lockfile. The shared search logic and dataset are unchanged. The website workspace dependency was prepared at the same version. Validation and artifact privacy review will precede publication.
+
+## The 0.1.1 candidate passed checks at 2026-11-19T16:42:08+01:00.
+
+The complete project check passed dataset reproduction, lint, TypeScript, all 28 tests, the production website build, and isolated npm package installation. The exact candidate archive and website build are now ready for prepublication privacy review. npm authentication was renewed through the official browser flow.
+
+## npm accepted the 0.1.1 release at 2026-11-19T16:47:08+01:00.
+
+The final 17-file npm archive, four source maps and their embedded source content, the six-file website output, and the outgoing source diff passed the prepublication privacy review. The website image contains only the public logo. npm accepted the exact reviewed archive after browser publication authorization. Anonymous registry availability and downstream updates are still pending while npm processes the package.

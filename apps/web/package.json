@@ -9,6 +9,6 @@
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
-    "venue-rank": "0.1.0"
+    "venue-rank": "0.1.1"
   }
 }
